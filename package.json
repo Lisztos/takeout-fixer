@@ -1,0 +1,42 @@
+{
+  "name": "takeout-fixer",
+  "version": "1.0.0",
+  "description": "Fix metadata for Google Photos Takeout files",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish=never"
+  },
+  "keywords": [
+    "google-photos",
+    "takeout",
+    "metadata",
+    "exif"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "dependencies": {
+    "exiftool-vendored": "^24.5.0"
+  },
+  "build": {
+    "appId": "com.yourcompany.takeout-fixer",
+    "productName": "Takeout Fixer",
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

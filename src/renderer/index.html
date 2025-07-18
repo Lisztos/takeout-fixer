@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Takeout Fixer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Google Photos Takeout Fixer</h1>
+    <p class="subtitle">Add metadata from JSON files to your photos and videos</p>
+    
+    <div class="upload-area" id="uploadArea">
+      <svg class="upload-icon" viewBox="0 0 24 24" width="48" height="48">
+        <path d="M9 16h6v-6h4l-7-7-7 7h4v6zm-4 2h14v2H5v-2z"/>
+      </svg>
+      <p>Drag & drop your Google Takeout folder here</p>
+      <p class="or">or</p>
+      <button class="select-btn" id="selectBtn">Select Folder</button>
+    </div>
+    
+    <div class="processing-area hidden" id="processingArea">
+      <h2>Processing...</h2>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <p class="progress-text" id="progressText">0 / 0 files processed</p>
+      <p class="current-file" id="currentFile"></p>
+    </div>
+    
+    <div class="results-area hidden" id="resultsArea">
+      <h2>Processing Complete!</h2>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-value" id="totalFiles">0</span>
+          <span class="stat-label">Total Files</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="successFiles">0</span>
+          <span class="stat-label">Successfully Updated</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value" id="failedFiles">0</span>
+          <span class="stat-label">Failed</span>
+        </div>
+      </div>
+      <button class="reset-btn" id="resetBtn">Process Another Folder</button>
+      <details class="error-details hidden" id="errorDetails">
+        <summary>View Errors</summary>
+        <ul class="error-list" id="errorList"></ul>
+      </details>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
